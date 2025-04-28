@@ -1,0 +1,55 @@
+const Moralis = require("moralis").default;
+const { processGraphData } = require("../../serializers/processGraphdata");
+
+
+const {moralisSerializer} = require('../../serializers/moralisSerializer');
+if(!Moralis){
+const Moralis = Moralis.start({
+  apiKey:
+    process.env.MORALIS_KEY,})
+  .then(() => console.log("Moralis initialized successfully."))
+  .catch((error) => console.error("Failed to initialize Moralis:", error));
+}
+
+const getTransactionDetails = async (req, res) => {
+    try {
+      const { txhash, chain } = req.params;
+      let chainId;
+      if(chain === 'eth'){
+         chainId= '0x1';
+        }
+        console.log("chain")
+      console.log("txhash",txhash);
+      console.log("chainid",chainId);
+      if (!txhash) {
+        return res.status(400).send({ error: "Transaction hash is required" });
+      }
+  
+      const response = await Moralis.EvmApi.transaction.getTransaction({
+        chain: "0x1",
+        transactionHash: txhash,
+      });
+      console.log(response);
+      if (response.raw) {
+
+        serialized = (moralisSerializer(response.raw));
+        graphdata = processGraphData(serialized, serialized[0].from_address, "ETH");
+        res.json({
+          results: {
+            transaction: serialized,
+            graphdata: graphdata,
+          },
+        });
+        // res.json((response.raw));
+      } else {
+        res.status(404).send({ error: "Transaction not found" });
+      }
+    } catch (e) {
+      console.error(e);
+      res
+        .status(500)
+        .send({ error: "An error occurred while fetching transaction details" });
+    }
+  };
+
+module.exports = { getTransactionDetails , Moralis};

@@ -1,0 +1,6 @@
+/node_modules
+.vercel
+/api.json
+/seeder.js
+.env
+.env.development.local
