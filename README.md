@@ -95,13 +95,11 @@ The frontend for this application is deployed and accessible at:
 
 ## Screenshots
 
-*(Please add the actual screenshot files to the repository, e.g., in an `images/` folder, and update the paths below)*
-
-| Screenshot 1                     | Screenshot 2                     | Screenshot 3                     |
-| :------------------------------- | :------------------------------- | :------------------------------- |
-| ![Screenshot 1](screenshot1.png) | ![Screenshot 2](screenshot2.png) | ![Screenshot 3](screenshot3.png) |
-| **Screenshot 4**                 | **Screenshot 5**                 | **Screenshot 6**                 |
-| ![Screenshot 4](screenshot4.png) | ![Screenshot 5](screenshot5.png) | ![Screenshot 6](screenshot6.png) |
+| Screenshot 1               | Screenshot 2               | Screenshot 3                 |
+| :------------------------- | :------------------------- | :--------------------------- |
+| ![Screenshot 1](public/one.png) | ![Screenshot 2](public/two.png) | ![Screenshot 3](public/three.png) |
+| **Screenshot 4**           | **Screenshot 5**           | **Screenshot 6**             |
+| ![Screenshot 4](public/four.png) | ![Screenshot 5](public/five.png) | ![Screenshot 6](public/six.png) |
 
 ## Major APIs
 
