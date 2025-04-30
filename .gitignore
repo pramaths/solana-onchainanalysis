@@ -4,3 +4,4 @@
 /seeder.js
 .env
 .env.development.local
+/api
