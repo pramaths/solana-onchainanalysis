@@ -45,6 +45,41 @@ docker-compose up --build
 ```
 If all the tests work properly, server will be running on `localhost:8000` (by default)
 
+## Large Media Files
+This project uses Git LFS (Large File Storage) for managing media files. To work with these files:
+
+1. Install Git LFS on your system: https://git-lfs.github.com/
+2. Set up Git LFS in your local repository:
+   ```bash
+   git lfs install
+   ```
+3. The repository is already configured to track MP4 files with Git LFS.
+
+For the main demonstration video:
+- Download from: [https://drive.google.com/file/d/1uldH9ug0lGjoH2rPJAzrv87ez-Fv7oIG/view?usp=sharing](https://drive.google.com/file/d/1uldH9ug0lGjoH2rPJAzrv87ez-Fv7oIG/view?usp=sharing)
+- Place it in the `public/` directory as `Spectra.mp4`
+
+## Advanced Investigation Capabilities
+
+This platform provides powerful blockchain investigation tools that enable:
+
+- **Deep Transaction Tracing**: Follow transaction paths up to 4 levels deep to uncover complex financial relationships and patterns
+- **Entity Clustering**: Automatically identify related addresses and cluster them based on transaction behaviors
+- **Anomaly Detection**: Highlight unusual transaction patterns or suspicious activities in real-time
+- **Cross-Chain Analysis**: Track assets as they move between Solana and other blockchains through bridges
+- **Wallet Profiling**: Generate comprehensive profiles of wallet activities, token holdings, and interaction patterns
+
+## Real-Time Streaming Architecture
+
+The system implements a sophisticated Server-Sent Events (SSE) streaming architecture that provides:
+
+- **Multi-Level Depth Streaming**: Monitor transaction flows in real-time up to 4 levels deep from a target address
+- **Filtered Event Streams**: Configure custom filters to receive only relevant blockchain events
+- **Low-Latency Updates**: Receive blockchain data with minimal delay (<500ms from block confirmation)
+- **Persistent Connections**: Maintain reliable streaming connections with automatic reconnection handling
+- **Scalable Implementation**: The streaming architecture can handle thousands of concurrent connections
+- **Custom Event Triggers**: Set up alerts and notifications based on specific on-chain activities
+
 ## Technologies Used
 
 This project utilizes the following technologies and services for Solana on-chain data analysis:
